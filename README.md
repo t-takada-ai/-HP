@@ -17,10 +17,12 @@ X(Twitter)投稿を「データ分析 → ネタ帳 → 生成 → 予約 → �
 ├── materials/                 # データ層(分析・索引・一次情報)
 │   ├── master_databank.md     # 自分の一次情報データバンク(体験・実績・エピソード)
 │   ├── past_posts_index.md    # 全投稿タイプ横断の索引(重複チェック照合元)
+│   ├── reference_posts.md     # ベンチマークポスト保管庫(構造分析済み)
 │   └── x_analysis_report.md   # 投稿データ分析レポート(ネタ帳の生成元)
 ├── .claude/skills/            # スキル層(投稿タイプ別の手順書。Claude Codeが自動発見)
 │   ├── x-thread-post-writing/ # ツリー型投稿(ネタ帳.md + 送信用テンプレート + 投稿ログ)
 │   ├── x-story-post-writing/  # ストーリー型投稿(idea_bank.md + 投稿ログ)
+│   ├── benchmark-analysis/    # 他アカウントの伸びポストを構造分析→スキルへ型として反映
 │   ├── persona-voice-rules/   # 人格・文体ルール(全投稿タイプ共通)
 │   └── hook-words/            # フック(冒頭1行)の型カタログ
 └── projects/
@@ -52,3 +54,10 @@ X(Twitter)投稿を「データ分析 → ネタ帳 → 生成 → 予約 → �
 ```
 
 ネタIDを自分で指定してもよい: 「A1で20:00枠を作って」
+
+伸びている他アカウントのポストを見つけたら、貼って「この構造を分析して反映して」:
+
+```
+→ benchmark-analysis スキルが起動し、構造分解 → reference_posts.md へ登録 →
+  success_patterns / hook-words / 送信用テンプレート へ型として反映(文言はコピーしない)
+```
